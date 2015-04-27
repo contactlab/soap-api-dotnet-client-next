@@ -2237,6 +2237,10 @@ public partial class Campaign
     
     private bool subscribersCountFieldSpecified;
     
+    private deliveryStatus statusField;
+    
+    private bool statusFieldSpecified;
+    
     public Campaign()
     {
         this.modifierField = CampaignType.NORMAL;
@@ -2540,6 +2544,34 @@ public partial class Campaign
             this.subscribersCountFieldSpecified = value;
         }
     }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
+    public deliveryStatus status
+    {
+        get
+        {
+            return this.statusField;
+        }
+        set
+        {
+            this.statusField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool statusSpecified
+    {
+        get
+        {
+            return this.statusFieldSpecified;
+        }
+        set
+        {
+            this.statusFieldSpecified = value;
+        }
+    }
 }
 
 /// <remarks/>
@@ -2566,6 +2598,9 @@ public enum CampaignType
     
     /// <remarks/>
     IMMEDIATE,
+    
+    /// <remarks/>
+    SPLIT_TEST,
 }
 
 /// <remarks/>
@@ -2595,6 +2630,65 @@ public enum deliveryRoleType
     
     /// <remarks/>
     DELIVERY_ROLE_BCC,
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+[System.SerializableAttribute()]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="domain.ws.api.contactlab.com")]
+public enum deliveryStatus
+{
+    
+    /// <remarks/>
+    INTERRUPTED,
+    
+    /// <remarks/>
+    DEAD,
+    
+    /// <remarks/>
+    FAILED,
+    
+    /// <remarks/>
+    NEW,
+    
+    /// <remarks/>
+    READY,
+    
+    /// <remarks/>
+    RUNNING,
+    
+    /// <remarks/>
+    FINISHED,
+    
+    /// <remarks/>
+    WAITING,
+    
+    /// <remarks/>
+    ALMOST_READY,
+    
+    /// <remarks/>
+    PERIODIC,
+    
+    /// <remarks/>
+    HIDDEN,
+    
+    /// <remarks/>
+    TRIGGERED,
+    
+    /// <remarks/>
+    SPLIT_RUNNING,
+    
+    /// <remarks/>
+    MASTER_REMOVE,
+    
+    /// <remarks/>
+    CLOSING,
+    
+    /// <remarks/>
+    IMMEDIATE,
+    
+    /// <remarks/>
+    SMARTRELAY,
 }
 
 /// <remarks/>
@@ -5794,65 +5888,6 @@ public partial class findCampaignsByStatus
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
 [System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="domain.ws.api.contactlab.com")]
-public enum deliveryStatus
-{
-    
-    /// <remarks/>
-    INTERRUPTED,
-    
-    /// <remarks/>
-    DEAD,
-    
-    /// <remarks/>
-    FAILED,
-    
-    /// <remarks/>
-    NEW,
-    
-    /// <remarks/>
-    READY,
-    
-    /// <remarks/>
-    RUNNING,
-    
-    /// <remarks/>
-    FINISHED,
-    
-    /// <remarks/>
-    WAITING,
-    
-    /// <remarks/>
-    ALMOST_READY,
-    
-    /// <remarks/>
-    PERIODIC,
-    
-    /// <remarks/>
-    HIDDEN,
-    
-    /// <remarks/>
-    TRIGGERED,
-    
-    /// <remarks/>
-    SPLIT_RUNNING,
-    
-    /// <remarks/>
-    MASTER_REMOVE,
-    
-    /// <remarks/>
-    CLOSING,
-    
-    /// <remarks/>
-    IMMEDIATE,
-    
-    /// <remarks/>
-    SMARTRELAY,
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
-[System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.api.contactlab.com/")]
@@ -5962,6 +5997,336 @@ public partial class sendImmediateByCampaignToSubscriber
         set
         {
             this.sendImmediateOptionsField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.api.contactlab.com/")]
+public partial class createSplitTestResponse
+{
+    
+    private SplitTestCampaign returnField;
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+    public SplitTestCampaign @return
+    {
+        get
+        {
+            return this.returnField;
+        }
+        set
+        {
+            this.returnField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="domain.ws.api.contactlab.com")]
+public partial class SplitTestCampaign
+{
+    
+    private int splitTestIdField;
+    
+    private bool splitTestIdFieldSpecified;
+    
+    private string labelField;
+    
+    private DeliverySplitConfig splitTestConfigurationField;
+    
+    private Campaign[] campaignsField;
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+    public int splitTestId
+    {
+        get
+        {
+            return this.splitTestIdField;
+        }
+        set
+        {
+            this.splitTestIdField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool splitTestIdSpecified
+    {
+        get
+        {
+            return this.splitTestIdFieldSpecified;
+        }
+        set
+        {
+            this.splitTestIdFieldSpecified = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+    public string label
+    {
+        get
+        {
+            return this.labelField;
+        }
+        set
+        {
+            this.labelField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+    public DeliverySplitConfig splitTestConfiguration
+    {
+        get
+        {
+            return this.splitTestConfigurationField;
+        }
+        set
+        {
+            this.splitTestConfigurationField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute("campaigns", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+    public Campaign[] campaigns
+    {
+        get
+        {
+            return this.campaignsField;
+        }
+        set
+        {
+            this.campaignsField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="domain.ws.api.contactlab.com")]
+public partial class DeliverySplitConfig
+{
+    
+    private int splitPercentField;
+    
+    private bool splitPercentFieldSpecified;
+    
+    private winningCriterion testWinningCriterionField;
+    
+    private bool testWinningCriterionFieldSpecified;
+    
+    private int deliveryIdField;
+    
+    private bool deliveryIdFieldSpecified;
+    
+    private int splitsField;
+    
+    private deliverySplitType splitTypeField;
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+    public int splitPercent
+    {
+        get
+        {
+            return this.splitPercentField;
+        }
+        set
+        {
+            this.splitPercentField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool splitPercentSpecified
+    {
+        get
+        {
+            return this.splitPercentFieldSpecified;
+        }
+        set
+        {
+            this.splitPercentFieldSpecified = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+    public winningCriterion testWinningCriterion
+    {
+        get
+        {
+            return this.testWinningCriterionField;
+        }
+        set
+        {
+            this.testWinningCriterionField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool testWinningCriterionSpecified
+    {
+        get
+        {
+            return this.testWinningCriterionFieldSpecified;
+        }
+        set
+        {
+            this.testWinningCriterionFieldSpecified = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+    public int deliveryId
+    {
+        get
+        {
+            return this.deliveryIdField;
+        }
+        set
+        {
+            this.deliveryIdField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool deliveryIdSpecified
+    {
+        get
+        {
+            return this.deliveryIdFieldSpecified;
+        }
+        set
+        {
+            this.deliveryIdFieldSpecified = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+    public int splits
+    {
+        get
+        {
+            return this.splitsField;
+        }
+        set
+        {
+            this.splitsField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+    public deliverySplitType splitType
+    {
+        get
+        {
+            return this.splitTypeField;
+        }
+        set
+        {
+            this.splitTypeField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+[System.SerializableAttribute()]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.api.contactlab.com/")]
+public enum winningCriterion
+{
+    
+    /// <remarks/>
+    WINNING_CRITERION_BY_VIEW,
+    
+    /// <remarks/>
+    WINNING_CRITERION_BY_CLICK,
+    
+    /// <remarks/>
+    WINNING_CRITERION_BY_CTOR,
+    
+    /// <remarks/>
+    NONE,
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+[System.SerializableAttribute()]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.api.contactlab.com/")]
+public enum deliverySplitType
+{
+    
+    /// <remarks/>
+    DELIVERY_SPLIT_TYPE_PARTED,
+    
+    /// <remarks/>
+    DELIVERY_SPLIT_TYPE_TEST,
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.api.contactlab.com/")]
+public partial class createSplitTest
+{
+    
+    private AuthToken tokenField;
+    
+    private SplitTestCampaign splitTestCampaignField;
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+    public AuthToken token
+    {
+        get
+        {
+            return this.tokenField;
+        }
+        set
+        {
+            this.tokenField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+    public SplitTestCampaign splitTestCampaign
+    {
+        get
+        {
+            return this.splitTestCampaignField;
+        }
+        set
+        {
+            this.splitTestCampaignField = value;
         }
     }
 }
@@ -8188,6 +8553,106 @@ public partial class getCampaignDeliveryStatus
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.api.contactlab.com/")]
+public partial class sendSplitTestWinnerResponse
+{
+    
+    private int returnField;
+    
+    private bool returnFieldSpecified;
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+    public int @return
+    {
+        get
+        {
+            return this.returnField;
+        }
+        set
+        {
+            this.returnField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool returnSpecified
+    {
+        get
+        {
+            return this.returnFieldSpecified;
+        }
+        set
+        {
+            this.returnFieldSpecified = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.api.contactlab.com/")]
+public partial class sendSplitTestWinner
+{
+    
+    private AuthToken tokenField;
+    
+    private int campaignToSendIdField;
+    
+    private bool campaignToSendIdFieldSpecified;
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+    public AuthToken token
+    {
+        get
+        {
+            return this.tokenField;
+        }
+        set
+        {
+            this.tokenField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+    public int campaignToSendId
+    {
+        get
+        {
+            return this.campaignToSendIdField;
+        }
+        set
+        {
+            this.campaignToSendIdField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool campaignToSendIdSpecified
+    {
+        get
+        {
+            return this.campaignToSendIdFieldSpecified;
+        }
+        set
+        {
+            this.campaignToSendIdFieldSpecified = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.api.contactlab.com/")]
 public partial class startSubscriberDataExchangeResponse
 {
 }
@@ -9019,6 +9484,154 @@ public partial class borrowToken
         set
         {
             this.userKeyField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.api.contactlab.com/")]
+public partial class sendSplitTestResponse
+{
+    
+    private int returnField;
+    
+    private bool returnFieldSpecified;
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+    public int @return
+    {
+        get
+        {
+            return this.returnField;
+        }
+        set
+        {
+            this.returnField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool returnSpecified
+    {
+        get
+        {
+            return this.returnFieldSpecified;
+        }
+        set
+        {
+            this.returnFieldSpecified = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.api.contactlab.com/")]
+public partial class sendSplitTest
+{
+    
+    private AuthToken tokenField;
+    
+    private int campaignIdentifierField;
+    
+    private int hoursField;
+    
+    private bool hoursFieldSpecified;
+    
+    private bool mailField;
+    
+    private bool mailFieldSpecified;
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+    public AuthToken token
+    {
+        get
+        {
+            return this.tokenField;
+        }
+        set
+        {
+            this.tokenField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+    public int campaignIdentifier
+    {
+        get
+        {
+            return this.campaignIdentifierField;
+        }
+        set
+        {
+            this.campaignIdentifierField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+    public int hours
+    {
+        get
+        {
+            return this.hoursField;
+        }
+        set
+        {
+            this.hoursField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool hoursSpecified
+    {
+        get
+        {
+            return this.hoursFieldSpecified;
+        }
+        set
+        {
+            this.hoursFieldSpecified = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+    public bool mail
+    {
+        get
+        {
+            return this.mailField;
+        }
+        set
+        {
+            this.mailField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool mailSpecified
+    {
+        get
+        {
+            return this.mailFieldSpecified;
+        }
+        set
+        {
+            this.mailFieldSpecified = value;
         }
     }
 }
@@ -10175,122 +10788,6 @@ public partial class sendImmediateMessageSDataCDataCA
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.api.contactlab.com/")]
-public partial class cloneAndSendCampaignResponse
-{
-    
-    private int returnField;
-    
-    private bool returnFieldSpecified;
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public int @return
-    {
-        get
-        {
-            return this.returnField;
-        }
-        set
-        {
-            this.returnField = value;
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool returnSpecified
-    {
-        get
-        {
-            return this.returnFieldSpecified;
-        }
-        set
-        {
-            this.returnFieldSpecified = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.api.contactlab.com/")]
-public partial class cloneAndSendCampaign
-{
-    
-    private AuthToken tokenField;
-    
-    private int campaignIdentifierField;
-    
-    private System.DateTime notBeforeField;
-    
-    private bool notBeforeFieldSpecified;
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public AuthToken token
-    {
-        get
-        {
-            return this.tokenField;
-        }
-        set
-        {
-            this.tokenField = value;
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-    public int campaignIdentifier
-    {
-        get
-        {
-            return this.campaignIdentifierField;
-        }
-        set
-        {
-            this.campaignIdentifierField = value;
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-    public System.DateTime notBefore
-    {
-        get
-        {
-            return this.notBeforeField;
-        }
-        set
-        {
-            this.notBeforeField = value;
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool notBeforeSpecified
-    {
-        get
-        {
-            return this.notBeforeFieldSpecified;
-        }
-        set
-        {
-            this.notBeforeFieldSpecified = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.api.contactlab.com/")]
 public partial class findMessageModelsResponse
 {
     
@@ -10497,6 +10994,122 @@ public partial class uploadMediaContent
         set
         {
             this.overwriteField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.api.contactlab.com/")]
+public partial class cloneAndSendCampaignResponse
+{
+    
+    private int returnField;
+    
+    private bool returnFieldSpecified;
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+    public int @return
+    {
+        get
+        {
+            return this.returnField;
+        }
+        set
+        {
+            this.returnField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool returnSpecified
+    {
+        get
+        {
+            return this.returnFieldSpecified;
+        }
+        set
+        {
+            this.returnFieldSpecified = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.api.contactlab.com/")]
+public partial class cloneAndSendCampaign
+{
+    
+    private AuthToken tokenField;
+    
+    private int campaignIdentifierField;
+    
+    private System.DateTime notBeforeField;
+    
+    private bool notBeforeFieldSpecified;
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+    public AuthToken token
+    {
+        get
+        {
+            return this.tokenField;
+        }
+        set
+        {
+            this.tokenField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+    public int campaignIdentifier
+    {
+        get
+        {
+            return this.campaignIdentifierField;
+        }
+        set
+        {
+            this.campaignIdentifierField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+    public System.DateTime notBefore
+    {
+        get
+        {
+            return this.notBeforeField;
+        }
+        set
+        {
+            this.notBeforeField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool notBeforeSpecified
+    {
+        get
+        {
+            return this.notBeforeFieldSpecified;
+        }
+        set
+        {
+            this.notBeforeFieldSpecified = value;
         }
     }
 }
@@ -12788,6 +13401,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -12832,6 +13447,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -12852,6 +13469,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -12877,12 +13496,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -12977,6 +13596,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -13021,6 +13642,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -13041,6 +13664,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -13066,12 +13691,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -13166,6 +13791,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -13210,6 +13837,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -13230,6 +13859,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -13255,12 +13886,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -13355,6 +13986,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -13399,6 +14032,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -13419,6 +14054,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -13444,12 +14081,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -13544,6 +14181,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -13588,6 +14227,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -13608,6 +14249,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -13633,12 +14276,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -13733,6 +14376,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -13777,6 +14422,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -13797,6 +14444,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -13822,12 +14471,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -13921,6 +14570,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -13965,6 +14616,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -13985,6 +14638,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -14010,12 +14665,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -14110,6 +14765,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -14154,6 +14811,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -14174,6 +14833,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -14199,12 +14860,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -14299,6 +14960,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -14343,6 +15006,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -14363,6 +15028,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -14388,12 +15055,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -14488,6 +15155,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -14532,6 +15201,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -14552,6 +15223,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -14577,12 +15250,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -14677,6 +15350,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -14721,6 +15396,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -14741,6 +15418,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -14766,12 +15445,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -14866,6 +15545,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -14910,6 +15591,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -14930,6 +15613,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -14955,12 +15640,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -15055,6 +15740,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -15099,6 +15786,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -15119,6 +15808,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -15144,12 +15835,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -15244,6 +15935,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -15288,6 +15981,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -15308,6 +16003,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -15333,12 +16030,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -15433,6 +16130,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -15477,6 +16176,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -15497,6 +16198,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -15522,12 +16225,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -15622,6 +16325,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -15666,6 +16371,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -15686,6 +16393,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -15711,12 +16420,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -15811,6 +16520,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -15855,6 +16566,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -15875,6 +16588,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -15900,12 +16615,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -16000,6 +16715,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -16044,6 +16761,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -16064,6 +16783,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -16089,12 +16810,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -16189,6 +16910,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -16233,6 +16956,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -16253,6 +16978,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -16278,12 +17005,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -16378,6 +17105,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -16422,6 +17151,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -16442,6 +17173,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -16467,12 +17200,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -16567,6 +17300,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -16611,6 +17346,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -16631,6 +17368,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -16656,12 +17395,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -16756,6 +17495,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -16800,6 +17541,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -16820,6 +17563,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -16845,12 +17590,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -16945,6 +17690,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -16989,6 +17736,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -17009,6 +17758,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -17034,12 +17785,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -17134,6 +17885,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -17178,6 +17931,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -17198,6 +17953,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -17223,12 +17980,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -17323,6 +18080,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -17367,6 +18126,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -17387,6 +18148,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -17412,12 +18175,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -17512,6 +18275,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -17556,6 +18321,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -17576,6 +18343,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -17601,12 +18370,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -17701,6 +18470,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -17745,6 +18516,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -17765,6 +18538,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -17790,12 +18565,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -17890,6 +18665,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -17934,6 +18711,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -17954,6 +18733,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -17979,12 +18760,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -18079,6 +18860,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -18123,6 +18906,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -18143,6 +18928,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -18168,12 +18955,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -18268,6 +19055,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -18312,6 +19101,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -18332,6 +19123,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -18357,12 +19150,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -18457,6 +19250,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -18501,6 +19296,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -18521,6 +19318,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -18546,12 +19345,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -18646,6 +19445,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -18690,6 +19491,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -18710,6 +19513,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -18735,12 +19540,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -18835,6 +19640,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -18879,6 +19686,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -18899,6 +19708,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -18924,12 +19735,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -19024,6 +19835,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -19068,6 +19881,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -19088,6 +19903,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -19113,12 +19930,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -19213,6 +20030,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -19257,6 +20076,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -19277,6 +20098,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -19302,12 +20125,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -19402,6 +20225,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -19446,6 +20271,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -19466,6 +20293,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -19491,12 +20320,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -19590,6 +20419,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -19634,6 +20465,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -19654,6 +20487,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -19679,12 +20514,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -19779,6 +20614,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -19823,6 +20660,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -19843,6 +20682,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -19868,12 +20709,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -19968,6 +20809,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -20012,6 +20855,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -20032,6 +20877,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -20057,12 +20904,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -20157,6 +21004,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -20201,6 +21050,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -20221,6 +21072,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -20246,12 +21099,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -20346,6 +21199,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -20390,6 +21245,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -20410,6 +21267,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -20435,12 +21294,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -20534,6 +21393,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -20578,6 +21439,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -20598,6 +21461,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -20623,12 +21488,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -20723,6 +21588,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -20767,6 +21634,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -20787,6 +21656,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -20812,12 +21683,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -20912,6 +21783,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -20956,6 +21829,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -20976,6 +21851,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -21001,12 +21878,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -21101,6 +21978,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -21145,6 +22024,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -21165,6 +22046,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -21190,12 +22073,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -21290,6 +22173,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -21334,6 +22219,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -21354,6 +22241,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -21379,12 +22268,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -21479,6 +22368,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -21523,6 +22414,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -21543,6 +22436,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -21568,12 +22463,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -21668,6 +22563,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -21712,6 +22609,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -21732,6 +22631,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -21757,12 +22658,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -21857,6 +22758,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -21901,6 +22804,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -21921,6 +22826,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -21946,12 +22853,207 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNoteResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNote))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubjectResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveryTransitions))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetweenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetween))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplateResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplate))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SlicedDataSet))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveriesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveries))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAvailableCommunicationCategories))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAliasResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAlias))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trackableLink))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveToken))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        ContactLabAPIClient.ClabService.sendSplitTestResponse sendSplitTest(ContactLabAPIClient.ClabService.sendSplitTestRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.sendSplitTestResponse> sendSplitTestAsync(ContactLabAPIClient.ClabService.sendSplitTestRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReportResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReport))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedbackResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedback))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getTrackedLinks))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignNameResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignName))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWebResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWeb))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNoteResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNote))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignNameResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignName))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessage))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessages))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSourcesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSources))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachmentResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLocked))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelopeResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelope))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAttachmentByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCid))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -22046,6 +23148,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -22090,6 +23194,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -22110,6 +23216,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -22135,12 +23243,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -22235,6 +23343,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -22279,6 +23389,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -22299,6 +23411,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -22324,12 +23438,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -22424,6 +23538,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -22468,6 +23584,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -22488,6 +23606,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -22513,12 +23633,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -22613,6 +23733,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -22657,6 +23779,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -22677,6 +23801,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -22702,12 +23828,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -22802,6 +23928,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -22846,6 +23974,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -22866,6 +23996,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -22891,12 +24023,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -22990,6 +24122,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -23034,6 +24168,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -23054,6 +24190,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -23079,1146 +24217,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaigns))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryById))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNoteResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNote))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubjectResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveryTransitions))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribers))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetweenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetween))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplateResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplate))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SlicedDataSet))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveriesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveries))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAvailableCommunicationCategories))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAliasResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAlias))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trackableLink))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveTokenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveToken))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        ContactLabAPIClient.ClabService.findCampaignsResponse findCampaigns(ContactLabAPIClient.ClabService.findCampaignsRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.findCampaignsResponse> findCampaignsAsync(ContactLabAPIClient.ClabService.findCampaignsRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute()]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReportResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReport))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedbackResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedback))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getTrackedLinks))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignNameResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignName))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWebResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWeb))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateTokenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNoteResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNote))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaignsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaigns))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribers))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignNameResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignName))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessage))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessages))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSourcesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSources))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachmentResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLocked))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelopeResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelope))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaignsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelById))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAttachmentByCampaignId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCid))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribersResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribers))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaigns))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryById))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNoteResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNote))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubjectResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveryTransitions))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribers))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetweenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetween))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplateResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplate))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SlicedDataSet))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveriesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveries))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAvailableCommunicationCategories))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAliasResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAlias))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trackableLink))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveTokenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveToken))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        ContactLabAPIClient.ClabService.getAttachmentByCampaignIdResponse getAttachmentByCampaignId(ContactLabAPIClient.ClabService.getAttachmentByCampaignIdRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.getAttachmentByCampaignIdResponse> getAttachmentByCampaignIdAsync(ContactLabAPIClient.ClabService.getAttachmentByCampaignIdRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute()]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReportResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReport))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedbackResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedback))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getTrackedLinks))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignNameResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignName))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWebResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWeb))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateTokenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNoteResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNote))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaignsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaigns))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribers))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignNameResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignName))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessage))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessages))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSourcesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSources))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachmentResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLocked))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelopeResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelope))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaignsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelById))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAttachmentByCampaignId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCid))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribersResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribers))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaigns))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryById))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNoteResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNote))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubjectResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveryTransitions))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribers))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetweenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetween))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplateResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplate))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SlicedDataSet))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveriesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveries))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAvailableCommunicationCategories))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAliasResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAlias))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trackableLink))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveTokenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveToken))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        ContactLabAPIClient.ClabService.getTrackedLinksResponse getTrackedLinks(ContactLabAPIClient.ClabService.getTrackedLinksRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.getTrackedLinksResponse> getTrackedLinksAsync(ContactLabAPIClient.ClabService.getTrackedLinksRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute()]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReportResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReport))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedbackResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedback))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getTrackedLinks))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignNameResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignName))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWebResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWeb))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateTokenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNoteResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNote))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaignsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaigns))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribers))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignNameResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignName))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessage))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessages))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSourcesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSources))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachmentResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLocked))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelopeResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelope))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaignsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelById))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAttachmentByCampaignId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCid))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribersResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribers))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaigns))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryById))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNoteResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNote))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubjectResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveryTransitions))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribers))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetweenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetween))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplateResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplate))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SlicedDataSet))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveriesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveries))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAvailableCommunicationCategories))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAliasResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAlias))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trackableLink))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveTokenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveToken))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        ContactLabAPIClient.ClabService.triggerDeliveryByIdResponse triggerDeliveryById(ContactLabAPIClient.ClabService.triggerDeliveryByIdRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.triggerDeliveryByIdResponse> triggerDeliveryByIdAsync(ContactLabAPIClient.ClabService.triggerDeliveryByIdRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute()]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReportResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReport))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedbackResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedback))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getTrackedLinks))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignNameResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignName))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWebResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWeb))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateTokenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNoteResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNote))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaignsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaigns))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribers))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignNameResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignName))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessage))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessages))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSourcesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSources))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachmentResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLocked))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelopeResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelope))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaignsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelById))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAttachmentByCampaignId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCid))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribersResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribers))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaigns))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryById))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNoteResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNote))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubjectResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveryTransitions))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribers))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetweenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetween))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplateResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplate))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SlicedDataSet))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveriesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveries))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAvailableCommunicationCategories))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAliasResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAlias))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trackableLink))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveTokenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveToken))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        ContactLabAPIClient.ClabService.triggerDeliveryByAliasResponse triggerDeliveryByAlias(ContactLabAPIClient.ClabService.triggerDeliveryByAliasRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.triggerDeliveryByAliasResponse> triggerDeliveryByAliasAsync(ContactLabAPIClient.ClabService.triggerDeliveryByAliasRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute()]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReportResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReport))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedbackResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedback))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getTrackedLinks))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignNameResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignName))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWebResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWeb))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateTokenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNoteResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNote))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaignsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaigns))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribers))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignNameResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignName))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessage))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessages))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSourcesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSources))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachmentResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLocked))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelopeResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelope))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaignsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelById))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAttachmentByCampaignId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCid))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribersResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribers))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKey))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaigns))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryById))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNoteResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNote))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubjectResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubject))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveryTransitions))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribers))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetweenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetween))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplateResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplate))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SlicedDataSet))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveriesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveries))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAvailableCommunicationCategories))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAliasResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAlias))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trackableLink))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveTokenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveToken))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        ContactLabAPIClient.ClabService.addSubscriberSourceResponse addSubscriberSource(ContactLabAPIClient.ClabService.addSubscriberSourceRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.addSubscriberSourceResponse> addSubscriberSourceAsync(ContactLabAPIClient.ClabService.addSubscriberSourceRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute()]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReportResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReport))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedbackResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedback))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getTrackedLinks))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignNameResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignName))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWebResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWeb))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateTokenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNoteResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNote))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaignsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaigns))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribers))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignNameResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignName))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessage))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessages))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSourcesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSources))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachmentResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLocked))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelopeResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelope))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatus))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaignsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelById))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAttachmentByCampaignId))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSource))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilterResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCid))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribersResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribers))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannelResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -24313,6 +24317,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -24357,6 +24363,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -24377,6 +24385,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -24402,12 +24412,1182 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNoteResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNote))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubjectResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveryTransitions))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetweenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetween))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplateResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplate))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SlicedDataSet))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveriesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveries))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAvailableCommunicationCategories))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAliasResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAlias))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trackableLink))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveToken))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        ContactLabAPIClient.ClabService.findCampaignsResponse findCampaigns(ContactLabAPIClient.ClabService.findCampaignsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.findCampaignsResponse> findCampaignsAsync(ContactLabAPIClient.ClabService.findCampaignsRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReportResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReport))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedbackResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedback))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getTrackedLinks))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignNameResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignName))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWebResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWeb))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNoteResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNote))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignNameResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignName))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessage))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessages))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSourcesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSources))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachmentResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLocked))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelopeResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelope))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAttachmentByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCid))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNoteResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNote))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubjectResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveryTransitions))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetweenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetween))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplateResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplate))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SlicedDataSet))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveriesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveries))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAvailableCommunicationCategories))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAliasResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAlias))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trackableLink))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveToken))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        ContactLabAPIClient.ClabService.getAttachmentByCampaignIdResponse getAttachmentByCampaignId(ContactLabAPIClient.ClabService.getAttachmentByCampaignIdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.getAttachmentByCampaignIdResponse> getAttachmentByCampaignIdAsync(ContactLabAPIClient.ClabService.getAttachmentByCampaignIdRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReportResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReport))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedbackResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedback))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getTrackedLinks))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignNameResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignName))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWebResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWeb))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNoteResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNote))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignNameResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignName))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessage))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessages))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSourcesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSources))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachmentResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLocked))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelopeResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelope))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAttachmentByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCid))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNoteResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNote))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubjectResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveryTransitions))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetweenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetween))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplateResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplate))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SlicedDataSet))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveriesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveries))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAvailableCommunicationCategories))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAliasResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAlias))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trackableLink))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveToken))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        ContactLabAPIClient.ClabService.getTrackedLinksResponse getTrackedLinks(ContactLabAPIClient.ClabService.getTrackedLinksRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.getTrackedLinksResponse> getTrackedLinksAsync(ContactLabAPIClient.ClabService.getTrackedLinksRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReportResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReport))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedbackResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedback))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getTrackedLinks))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignNameResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignName))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWebResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWeb))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNoteResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNote))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignNameResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignName))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessage))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessages))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSourcesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSources))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachmentResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLocked))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelopeResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelope))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAttachmentByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCid))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNoteResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNote))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubjectResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveryTransitions))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetweenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetween))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplateResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplate))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SlicedDataSet))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveriesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveries))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAvailableCommunicationCategories))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAliasResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAlias))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trackableLink))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveToken))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        ContactLabAPIClient.ClabService.triggerDeliveryByIdResponse triggerDeliveryById(ContactLabAPIClient.ClabService.triggerDeliveryByIdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.triggerDeliveryByIdResponse> triggerDeliveryByIdAsync(ContactLabAPIClient.ClabService.triggerDeliveryByIdRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReportResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReport))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedbackResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedback))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getTrackedLinks))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignNameResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignName))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWebResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWeb))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNoteResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNote))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignNameResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignName))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessage))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessages))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSourcesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSources))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachmentResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLocked))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelopeResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelope))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAttachmentByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCid))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNoteResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNote))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubjectResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveryTransitions))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetweenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetween))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplateResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplate))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SlicedDataSet))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveriesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveries))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAvailableCommunicationCategories))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAliasResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAlias))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trackableLink))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveToken))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        ContactLabAPIClient.ClabService.triggerDeliveryByAliasResponse triggerDeliveryByAlias(ContactLabAPIClient.ClabService.triggerDeliveryByAliasRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.triggerDeliveryByAliasResponse> triggerDeliveryByAliasAsync(ContactLabAPIClient.ClabService.triggerDeliveryByAliasRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReportResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReport))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedbackResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedback))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getTrackedLinks))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignNameResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignName))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWebResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWeb))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNoteResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNote))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignNameResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignName))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessage))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessages))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSourcesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSources))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachmentResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLocked))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelopeResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelope))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAttachmentByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCid))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNoteResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNote))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubjectResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveryTransitions))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetweenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetween))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplateResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplate))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SlicedDataSet))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveriesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveries))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAvailableCommunicationCategories))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAliasResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAlias))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trackableLink))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveToken))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        ContactLabAPIClient.ClabService.addSubscriberSourceResponse addSubscriberSource(ContactLabAPIClient.ClabService.addSubscriberSourceRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.addSubscriberSourceResponse> addSubscriberSourceAsync(ContactLabAPIClient.ClabService.addSubscriberSourceRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReportResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReport))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedbackResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedback))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getTrackedLinks))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignNameResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignName))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWebResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWeb))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNoteResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNote))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignNameResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignName))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessage))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessages))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSourcesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSources))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachmentResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLocked))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelopeResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelope))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAttachmentByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCid))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -24502,6 +25682,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -24546,6 +25728,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -24566,6 +25750,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -24591,12 +25777,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -24691,6 +25877,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -24735,6 +25923,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -24755,6 +25945,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -24780,12 +25972,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -24880,6 +26072,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -24924,6 +26118,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -24944,6 +26140,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -24969,12 +26167,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -25069,6 +26267,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -25113,6 +26313,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -25133,6 +26335,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -25158,12 +26362,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -25216,7 +26420,7 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.invalidateTokenResponse> invalidateTokenAsync(ContactLabAPIClient.ClabService.invalidateTokenRequest request);
         
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlArrayAttribute'.
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilterResponse))]
@@ -25258,6 +26462,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -25302,6 +26508,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -25322,6 +26530,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -25347,12 +26557,402 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNoteResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNote))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubjectResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveryTransitions))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetweenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetween))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplateResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplate))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SlicedDataSet))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveriesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveries))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAvailableCommunicationCategories))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAliasResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAlias))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trackableLink))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveToken))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        ContactLabAPIClient.ClabService.sendSplitTestWinnerResponse sendSplitTestWinner(ContactLabAPIClient.ClabService.sendSplitTestWinnerRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.sendSplitTestWinnerResponse> sendSplitTestWinnerAsync(ContactLabAPIClient.ClabService.sendSplitTestWinnerRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReportResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReport))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedbackResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedback))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getTrackedLinks))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignNameResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignName))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWebResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWeb))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNoteResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNote))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignNameResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignName))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessage))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessages))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSourcesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSources))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachmentResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLocked))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelopeResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelope))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAttachmentByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCid))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNoteResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNote))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubjectResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveryTransitions))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetweenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetween))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplateResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplate))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SlicedDataSet))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveriesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveries))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAvailableCommunicationCategories))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAliasResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAlias))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trackableLink))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveToken))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        ContactLabAPIClient.ClabService.createSplitTestResponse createSplitTest(ContactLabAPIClient.ClabService.createSplitTestRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.createSplitTestResponse> createSplitTestAsync(ContactLabAPIClient.ClabService.createSplitTestRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlArrayAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReportResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReport))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedbackResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedback))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getTrackedLinks))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignNameResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignName))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWebResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWeb))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNoteResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNote))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignNameResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignName))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessage))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessages))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSourcesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSources))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachmentResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLocked))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelopeResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelope))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAttachmentByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCid))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -25447,6 +27047,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -25491,6 +27093,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -25511,6 +27115,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -25536,12 +27142,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -25635,6 +27241,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -25679,6 +27287,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -25699,6 +27309,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -25724,12 +27336,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -25823,6 +27435,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -25867,6 +27481,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -25887,6 +27503,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -25912,12 +27530,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -26012,6 +27630,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -26056,6 +27676,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -26076,6 +27698,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -26101,12 +27725,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -26201,6 +27825,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -26245,6 +27871,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -26265,6 +27893,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -26290,12 +27920,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -26389,6 +28019,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -26433,6 +28065,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -26453,6 +28087,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -26478,12 +28114,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -26578,6 +28214,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -26622,6 +28260,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -26642,6 +28282,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -26667,12 +28309,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -26767,6 +28409,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -26811,6 +28455,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -26831,6 +28477,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -26856,12 +28504,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -26956,6 +28604,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -27000,6 +28650,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -27020,6 +28672,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -27045,12 +28699,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -27145,6 +28799,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -27189,6 +28845,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -27209,6 +28867,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -27234,12 +28894,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -27334,6 +28994,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -27378,6 +29040,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -27398,6 +29062,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -27423,12 +29089,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -27523,6 +29189,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -27567,6 +29235,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -27587,6 +29257,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -27612,12 +29284,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -27712,6 +29384,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -27756,6 +29430,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -27776,6 +29452,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -27801,12 +29479,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -27901,6 +29579,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -27945,6 +29625,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -27965,6 +29647,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -27990,12 +29674,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -28090,6 +29774,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -28134,6 +29820,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -28154,6 +29842,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -28179,12 +29869,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -28279,6 +29969,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -28323,6 +30015,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -28343,6 +30037,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -28368,12 +30064,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -28468,6 +30164,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -28512,6 +30210,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -28532,6 +30232,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -28557,12 +30259,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -28657,6 +30359,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -28701,6 +30405,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -28721,6 +30427,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -28746,12 +30454,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -28846,6 +30554,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -28890,6 +30600,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -28910,6 +30622,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -28935,12 +30649,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -29035,6 +30749,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -29079,6 +30795,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -29099,6 +30817,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -29124,12 +30844,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -29224,6 +30944,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -29268,6 +30990,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -29288,6 +31012,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -29313,12 +31039,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -29413,6 +31139,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -29457,6 +31185,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -29477,6 +31207,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -29502,12 +31234,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -29602,6 +31334,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -29646,6 +31380,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -29666,6 +31402,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -29691,12 +31429,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -29791,6 +31529,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
@@ -29835,6 +31575,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
@@ -29855,6 +31597,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
@@ -29880,12 +31624,12 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
@@ -32376,6 +34120,63 @@ namespace ContactLabAPIClient.ClabService
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="sendSplitTest", WrapperNamespace="http://ws.api.contactlab.com/", IsWrapped=true)]
+    public partial class sendSplitTestRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.api.contactlab.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public AuthToken token;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.api.contactlab.com/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int campaignIdentifier;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.api.contactlab.com/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int hours;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.api.contactlab.com/", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool mail;
+        
+        public sendSplitTestRequest()
+        {
+        }
+        
+        public sendSplitTestRequest(AuthToken token, int campaignIdentifier, int hours, bool mail)
+        {
+            this.token = token;
+            this.campaignIdentifier = campaignIdentifier;
+            this.hours = hours;
+            this.mail = mail;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="sendSplitTestResponse", WrapperNamespace="http://ws.api.contactlab.com/", IsWrapped=true)]
+    public partial class sendSplitTestResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.api.contactlab.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public sendSplitTestResponse()
+        {
+        }
+        
+        public sendSplitTestResponse(int @return)
+        {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="cloneAndSendCampaign", WrapperNamespace="http://ws.api.contactlab.com/", IsWrapped=true)]
     public partial class cloneAndSendCampaignRequest
     {
@@ -32653,6 +34454,58 @@ namespace ContactLabAPIClient.ClabService
         
         public cancelCampaignResponse()
         {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="countSubscribersIncludedInFilter", WrapperNamespace="http://ws.api.contactlab.com/", IsWrapped=true)]
+    public partial class countSubscribersIncludedInFilterRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.api.contactlab.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public AuthToken token;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.api.contactlab.com/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int sourceIdentifier;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.api.contactlab.com/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int filterIdentifier;
+        
+        public countSubscribersIncludedInFilterRequest()
+        {
+        }
+        
+        public countSubscribersIncludedInFilterRequest(AuthToken token, int sourceIdentifier, int filterIdentifier)
+        {
+            this.token = token;
+            this.sourceIdentifier = sourceIdentifier;
+            this.filterIdentifier = filterIdentifier;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="countSubscribersIncludedInFilterResponse", WrapperNamespace="http://ws.api.contactlab.com/", IsWrapped=true)]
+    public partial class countSubscribersIncludedInFilterResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.api.contactlab.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public countSubscribersIncludedInFilterResponse()
+        {
+        }
+        
+        public countSubscribersIncludedInFilterResponse(int @return)
+        {
+            this.@return = @return;
         }
     }
     
@@ -32961,58 +34814,6 @@ namespace ContactLabAPIClient.ClabService
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="countSubscribersIncludedInFilter", WrapperNamespace="http://ws.api.contactlab.com/", IsWrapped=true)]
-    public partial class countSubscribersIncludedInFilterRequest
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.api.contactlab.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public AuthToken token;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.api.contactlab.com/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int sourceIdentifier;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.api.contactlab.com/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int filterIdentifier;
-        
-        public countSubscribersIncludedInFilterRequest()
-        {
-        }
-        
-        public countSubscribersIncludedInFilterRequest(AuthToken token, int sourceIdentifier, int filterIdentifier)
-        {
-            this.token = token;
-            this.sourceIdentifier = sourceIdentifier;
-            this.filterIdentifier = filterIdentifier;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="countSubscribersIncludedInFilterResponse", WrapperNamespace="http://ws.api.contactlab.com/", IsWrapped=true)]
-    public partial class countSubscribersIncludedInFilterResponse
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.api.contactlab.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public countSubscribersIncludedInFilterResponse()
-        {
-        }
-        
-        public countSubscribersIncludedInFilterResponse(int @return)
-        {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="findSubscribers", WrapperNamespace="http://ws.api.contactlab.com/", IsWrapped=true)]
     public partial class findSubscribersRequest
     {
@@ -33240,6 +35041,100 @@ namespace ContactLabAPIClient.ClabService
         }
         
         public invalidateTokenResponse(bool @return)
+        {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="sendSplitTestWinner", WrapperNamespace="http://ws.api.contactlab.com/", IsWrapped=true)]
+    public partial class sendSplitTestWinnerRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.api.contactlab.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public AuthToken token;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.api.contactlab.com/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int campaignToSendId;
+        
+        public sendSplitTestWinnerRequest()
+        {
+        }
+        
+        public sendSplitTestWinnerRequest(AuthToken token, int campaignToSendId)
+        {
+            this.token = token;
+            this.campaignToSendId = campaignToSendId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="sendSplitTestWinnerResponse", WrapperNamespace="http://ws.api.contactlab.com/", IsWrapped=true)]
+    public partial class sendSplitTestWinnerResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.api.contactlab.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public sendSplitTestWinnerResponse()
+        {
+        }
+        
+        public sendSplitTestWinnerResponse(int @return)
+        {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="createSplitTest", WrapperNamespace="http://ws.api.contactlab.com/", IsWrapped=true)]
+    public partial class createSplitTestRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.api.contactlab.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public AuthToken token;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.api.contactlab.com/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SplitTestCampaign splitTestCampaign;
+        
+        public createSplitTestRequest()
+        {
+        }
+        
+        public createSplitTestRequest(AuthToken token, SplitTestCampaign splitTestCampaign)
+        {
+            this.token = token;
+            this.splitTestCampaign = splitTestCampaign;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="createSplitTestResponse", WrapperNamespace="http://ws.api.contactlab.com/", IsWrapped=true)]
+    public partial class createSplitTestResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.api.contactlab.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SplitTestCampaign @return;
+        
+        public createSplitTestResponse()
+        {
+        }
+        
+        public createSplitTestResponse(SplitTestCampaign @return)
         {
             this.@return = @return;
         }
@@ -36217,6 +38112,39 @@ namespace ContactLabAPIClient.ClabService
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ContactLabAPIClient.ClabService.sendSplitTestResponse ContactLabAPIClient.ClabService.ClabService.sendSplitTest(ContactLabAPIClient.ClabService.sendSplitTestRequest request)
+        {
+            return base.Channel.sendSplitTest(request);
+        }
+        
+        public int sendSplitTest(AuthToken token, int campaignIdentifier, int hours, bool mail)
+        {
+            ContactLabAPIClient.ClabService.sendSplitTestRequest inValue = new ContactLabAPIClient.ClabService.sendSplitTestRequest();
+            inValue.token = token;
+            inValue.campaignIdentifier = campaignIdentifier;
+            inValue.hours = hours;
+            inValue.mail = mail;
+            ContactLabAPIClient.ClabService.sendSplitTestResponse retVal = ((ContactLabAPIClient.ClabService.ClabService)(this)).sendSplitTest(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.sendSplitTestResponse> ContactLabAPIClient.ClabService.ClabService.sendSplitTestAsync(ContactLabAPIClient.ClabService.sendSplitTestRequest request)
+        {
+            return base.Channel.sendSplitTestAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.sendSplitTestResponse> sendSplitTestAsync(AuthToken token, int campaignIdentifier, int hours, bool mail)
+        {
+            ContactLabAPIClient.ClabService.sendSplitTestRequest inValue = new ContactLabAPIClient.ClabService.sendSplitTestRequest();
+            inValue.token = token;
+            inValue.campaignIdentifier = campaignIdentifier;
+            inValue.hours = hours;
+            inValue.mail = mail;
+            return ((ContactLabAPIClient.ClabService.ClabService)(this)).sendSplitTestAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         ContactLabAPIClient.ClabService.cloneAndSendCampaignResponse ContactLabAPIClient.ClabService.ClabService.cloneAndSendCampaign(ContactLabAPIClient.ClabService.cloneAndSendCampaignRequest request)
         {
             return base.Channel.cloneAndSendCampaign(request);
@@ -36391,6 +38319,37 @@ namespace ContactLabAPIClient.ClabService
             inValue.token = token;
             inValue.campaignIdentifier = campaignIdentifier;
             return ((ContactLabAPIClient.ClabService.ClabService)(this)).cancelCampaignAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ContactLabAPIClient.ClabService.countSubscribersIncludedInFilterResponse ContactLabAPIClient.ClabService.ClabService.countSubscribersIncludedInFilter(ContactLabAPIClient.ClabService.countSubscribersIncludedInFilterRequest request)
+        {
+            return base.Channel.countSubscribersIncludedInFilter(request);
+        }
+        
+        public int countSubscribersIncludedInFilter(AuthToken token, int sourceIdentifier, int filterIdentifier)
+        {
+            ContactLabAPIClient.ClabService.countSubscribersIncludedInFilterRequest inValue = new ContactLabAPIClient.ClabService.countSubscribersIncludedInFilterRequest();
+            inValue.token = token;
+            inValue.sourceIdentifier = sourceIdentifier;
+            inValue.filterIdentifier = filterIdentifier;
+            ContactLabAPIClient.ClabService.countSubscribersIncludedInFilterResponse retVal = ((ContactLabAPIClient.ClabService.ClabService)(this)).countSubscribersIncludedInFilter(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.countSubscribersIncludedInFilterResponse> ContactLabAPIClient.ClabService.ClabService.countSubscribersIncludedInFilterAsync(ContactLabAPIClient.ClabService.countSubscribersIncludedInFilterRequest request)
+        {
+            return base.Channel.countSubscribersIncludedInFilterAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.countSubscribersIncludedInFilterResponse> countSubscribersIncludedInFilterAsync(AuthToken token, int sourceIdentifier, int filterIdentifier)
+        {
+            ContactLabAPIClient.ClabService.countSubscribersIncludedInFilterRequest inValue = new ContactLabAPIClient.ClabService.countSubscribersIncludedInFilterRequest();
+            inValue.token = token;
+            inValue.sourceIdentifier = sourceIdentifier;
+            inValue.filterIdentifier = filterIdentifier;
+            return ((ContactLabAPIClient.ClabService.ClabService)(this)).countSubscribersIncludedInFilterAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -36576,37 +38535,6 @@ namespace ContactLabAPIClient.ClabService
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ContactLabAPIClient.ClabService.countSubscribersIncludedInFilterResponse ContactLabAPIClient.ClabService.ClabService.countSubscribersIncludedInFilter(ContactLabAPIClient.ClabService.countSubscribersIncludedInFilterRequest request)
-        {
-            return base.Channel.countSubscribersIncludedInFilter(request);
-        }
-        
-        public int countSubscribersIncludedInFilter(AuthToken token, int sourceIdentifier, int filterIdentifier)
-        {
-            ContactLabAPIClient.ClabService.countSubscribersIncludedInFilterRequest inValue = new ContactLabAPIClient.ClabService.countSubscribersIncludedInFilterRequest();
-            inValue.token = token;
-            inValue.sourceIdentifier = sourceIdentifier;
-            inValue.filterIdentifier = filterIdentifier;
-            ContactLabAPIClient.ClabService.countSubscribersIncludedInFilterResponse retVal = ((ContactLabAPIClient.ClabService.ClabService)(this)).countSubscribersIncludedInFilter(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.countSubscribersIncludedInFilterResponse> ContactLabAPIClient.ClabService.ClabService.countSubscribersIncludedInFilterAsync(ContactLabAPIClient.ClabService.countSubscribersIncludedInFilterRequest request)
-        {
-            return base.Channel.countSubscribersIncludedInFilterAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.countSubscribersIncludedInFilterResponse> countSubscribersIncludedInFilterAsync(AuthToken token, int sourceIdentifier, int filterIdentifier)
-        {
-            ContactLabAPIClient.ClabService.countSubscribersIncludedInFilterRequest inValue = new ContactLabAPIClient.ClabService.countSubscribersIncludedInFilterRequest();
-            inValue.token = token;
-            inValue.sourceIdentifier = sourceIdentifier;
-            inValue.filterIdentifier = filterIdentifier;
-            return ((ContactLabAPIClient.ClabService.ClabService)(this)).countSubscribersIncludedInFilterAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         ContactLabAPIClient.ClabService.findSubscribersResponse ContactLabAPIClient.ClabService.ClabService.findSubscribers(ContactLabAPIClient.ClabService.findSubscribersRequest request)
         {
             return base.Channel.findSubscribers(request);
@@ -36749,6 +38677,64 @@ namespace ContactLabAPIClient.ClabService
             ContactLabAPIClient.ClabService.invalidateTokenRequest inValue = new ContactLabAPIClient.ClabService.invalidateTokenRequest();
             inValue.token = token;
             return ((ContactLabAPIClient.ClabService.ClabService)(this)).invalidateTokenAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ContactLabAPIClient.ClabService.sendSplitTestWinnerResponse ContactLabAPIClient.ClabService.ClabService.sendSplitTestWinner(ContactLabAPIClient.ClabService.sendSplitTestWinnerRequest request)
+        {
+            return base.Channel.sendSplitTestWinner(request);
+        }
+        
+        public int sendSplitTestWinner(AuthToken token, int campaignToSendId)
+        {
+            ContactLabAPIClient.ClabService.sendSplitTestWinnerRequest inValue = new ContactLabAPIClient.ClabService.sendSplitTestWinnerRequest();
+            inValue.token = token;
+            inValue.campaignToSendId = campaignToSendId;
+            ContactLabAPIClient.ClabService.sendSplitTestWinnerResponse retVal = ((ContactLabAPIClient.ClabService.ClabService)(this)).sendSplitTestWinner(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.sendSplitTestWinnerResponse> ContactLabAPIClient.ClabService.ClabService.sendSplitTestWinnerAsync(ContactLabAPIClient.ClabService.sendSplitTestWinnerRequest request)
+        {
+            return base.Channel.sendSplitTestWinnerAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.sendSplitTestWinnerResponse> sendSplitTestWinnerAsync(AuthToken token, int campaignToSendId)
+        {
+            ContactLabAPIClient.ClabService.sendSplitTestWinnerRequest inValue = new ContactLabAPIClient.ClabService.sendSplitTestWinnerRequest();
+            inValue.token = token;
+            inValue.campaignToSendId = campaignToSendId;
+            return ((ContactLabAPIClient.ClabService.ClabService)(this)).sendSplitTestWinnerAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ContactLabAPIClient.ClabService.createSplitTestResponse ContactLabAPIClient.ClabService.ClabService.createSplitTest(ContactLabAPIClient.ClabService.createSplitTestRequest request)
+        {
+            return base.Channel.createSplitTest(request);
+        }
+        
+        public SplitTestCampaign createSplitTest(AuthToken token, SplitTestCampaign splitTestCampaign)
+        {
+            ContactLabAPIClient.ClabService.createSplitTestRequest inValue = new ContactLabAPIClient.ClabService.createSplitTestRequest();
+            inValue.token = token;
+            inValue.splitTestCampaign = splitTestCampaign;
+            ContactLabAPIClient.ClabService.createSplitTestResponse retVal = ((ContactLabAPIClient.ClabService.ClabService)(this)).createSplitTest(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.createSplitTestResponse> ContactLabAPIClient.ClabService.ClabService.createSplitTestAsync(ContactLabAPIClient.ClabService.createSplitTestRequest request)
+        {
+            return base.Channel.createSplitTestAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.createSplitTestResponse> createSplitTestAsync(AuthToken token, SplitTestCampaign splitTestCampaign)
+        {
+            ContactLabAPIClient.ClabService.createSplitTestRequest inValue = new ContactLabAPIClient.ClabService.createSplitTestRequest();
+            inValue.token = token;
+            inValue.splitTestCampaign = splitTestCampaign;
+            return ((ContactLabAPIClient.ClabService.ClabService)(this)).createSplitTestAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
