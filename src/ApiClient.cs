@@ -7048,90 +7048,6 @@ public partial class countSubscribersIncludedInFilter
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.api.contactlab.com/")]
-public partial class findFiltersBySubscriberSourceResponse
-{
-    
-    private SubscriberSourceFilters returnField;
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public SubscriberSourceFilters @return
-    {
-        get
-        {
-            return this.returnField;
-        }
-        set
-        {
-            this.returnField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.api.contactlab.com/")]
-public partial class findFiltersBySubscriberSource
-{
-    
-    private AuthToken tokenField;
-    
-    private int sourceIdentifierField;
-    
-    private LookupPreferences lookupPrefsField;
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public AuthToken token
-    {
-        get
-        {
-            return this.tokenField;
-        }
-        set
-        {
-            this.tokenField = value;
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-    public int sourceIdentifier
-    {
-        get
-        {
-            return this.sourceIdentifierField;
-        }
-        set
-        {
-            this.sourceIdentifierField = value;
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-    public LookupPreferences lookupPrefs
-    {
-        get
-        {
-            return this.lookupPrefsField;
-        }
-        set
-        {
-            this.lookupPrefsField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.api.contactlab.com/")]
 public partial class setCampaignRecurrencyResponse
 {
     
@@ -7222,6 +7138,90 @@ public partial class setCampaignRecurrency
         set
         {
             this.enableField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.api.contactlab.com/")]
+public partial class findFiltersBySubscriberSourceResponse
+{
+    
+    private SubscriberSourceFilters returnField;
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+    public SubscriberSourceFilters @return
+    {
+        get
+        {
+            return this.returnField;
+        }
+        set
+        {
+            this.returnField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.api.contactlab.com/")]
+public partial class findFiltersBySubscriberSource
+{
+    
+    private AuthToken tokenField;
+    
+    private int sourceIdentifierField;
+    
+    private LookupPreferences lookupPrefsField;
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+    public AuthToken token
+    {
+        get
+        {
+            return this.tokenField;
+        }
+        set
+        {
+            this.tokenField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+    public int sourceIdentifier
+    {
+        get
+        {
+            return this.sourceIdentifierField;
+        }
+        set
+        {
+            this.sourceIdentifierField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+    public LookupPreferences lookupPrefs
+    {
+        get
+        {
+            return this.lookupPrefsField;
+        }
+        set
+        {
+            this.lookupPrefsField = value;
         }
     }
 }
@@ -10372,6 +10372,312 @@ public partial class createMessageModel
         set
         {
             this.modelField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.api.contactlab.com/")]
+public partial class getSubscriberSourceDescriptionResponse
+{
+    
+    private SubscriberSourceDescription returnField;
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+    public SubscriberSourceDescription @return
+    {
+        get
+        {
+            return this.returnField;
+        }
+        set
+        {
+            this.returnField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="domain.ws.api.contactlab.com")]
+public partial class SubscriberSourceDescription
+{
+    
+    private string tableNameField;
+    
+    private FieldDescription[] fieldsField;
+    
+    private IndexDescription[] indexesField;
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+    public string tableName
+    {
+        get
+        {
+            return this.tableNameField;
+        }
+        set
+        {
+            this.tableNameField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute("fields", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=1)]
+    public FieldDescription[] fields
+    {
+        get
+        {
+            return this.fieldsField;
+        }
+        set
+        {
+            this.fieldsField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute("indexes", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
+    public IndexDescription[] indexes
+    {
+        get
+        {
+            return this.indexesField;
+        }
+        set
+        {
+            this.indexesField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="domain.ws.api.contactlab.com")]
+public partial class FieldDescription
+{
+    
+    private string fieldNameField;
+    
+    private string dataTypeField;
+    
+    private bool primaryField;
+    
+    private bool notNullField;
+    
+    private bool uniqueField;
+    
+    private bool autoIncrementField;
+    
+    private string defaultValueField;
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+    public string fieldName
+    {
+        get
+        {
+            return this.fieldNameField;
+        }
+        set
+        {
+            this.fieldNameField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+    public string dataType
+    {
+        get
+        {
+            return this.dataTypeField;
+        }
+        set
+        {
+            this.dataTypeField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+    public bool primary
+    {
+        get
+        {
+            return this.primaryField;
+        }
+        set
+        {
+            this.primaryField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+    public bool notNull
+    {
+        get
+        {
+            return this.notNullField;
+        }
+        set
+        {
+            this.notNullField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+    public bool unique
+    {
+        get
+        {
+            return this.uniqueField;
+        }
+        set
+        {
+            this.uniqueField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+    public bool autoIncrement
+    {
+        get
+        {
+            return this.autoIncrementField;
+        }
+        set
+        {
+            this.autoIncrementField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+    public string defaultValue
+    {
+        get
+        {
+            return this.defaultValueField;
+        }
+        set
+        {
+            this.defaultValueField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="domain.ws.api.contactlab.com")]
+public partial class IndexDescription
+{
+    
+    private string nameField;
+    
+    private string typeField;
+    
+    private string[] fieldsField;
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+    public string name
+    {
+        get
+        {
+            return this.nameField;
+        }
+        set
+        {
+            this.nameField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+    public string type
+    {
+        get
+        {
+            return this.typeField;
+        }
+        set
+        {
+            this.typeField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute("fields", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
+    public string[] fields
+    {
+        get
+        {
+            return this.fieldsField;
+        }
+        set
+        {
+            this.fieldsField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.api.contactlab.com/")]
+public partial class getSubscriberSourceDescription
+{
+    
+    private AuthToken tokenField;
+    
+    private int sourceIdentifierField;
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+    public AuthToken token
+    {
+        get
+        {
+            return this.tokenField;
+        }
+        set
+        {
+            this.tokenField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+    public int sourceIdentifier
+    {
+        get
+        {
+            return this.sourceIdentifierField;
+        }
+        set
+        {
+            this.sourceIdentifierField = value;
         }
     }
 }
@@ -17560,10 +17866,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -17631,6 +17937,245 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSelectionSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSelectionSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSplitTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersByResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersBy))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSIdCDataCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessages))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSourcesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriberSources))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPageBuilderTemplatesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPageBuilderTemplates))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachmentResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addAttachment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDeliveryStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLockedResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(isSubscriberSourceLocked))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusByMailqId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findNotesByCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(modifySubscriberSubscriptionStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPeriodicCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSelectionStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSelectionStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAttachmentByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCIdCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(renameSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(renameSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByChannel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSDataCDataCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(archiveSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModelsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageModels))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContentResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(uploadMediaContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKeyResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCryptoKey))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMobileApplicationByCodeResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMobileApplicationByCode))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPageBuilderPagesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findPageBuilderPages))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNoteResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addCampaignNote))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getUnsubscribeLinkResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getUnsubscribeLink))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveryTransitions))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getPageBuilderPageContentResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getPageBuilderPageContent))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDeliveryMailQ))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SlicedDataSet))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBy))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignAliasToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(rollbackSelectionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(rollbackSelection))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSelectionTestFilterIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSelectionTestFilterId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trackableLink))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageInfoByCampaignId))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        ContactLabAPIClient.ClabService.getSubscriberSourceDescriptionResponse getSubscriberSourceDescription(ContactLabAPIClient.ClabService.getSubscriberSourceDescriptionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.getSubscriberSourceDescriptionResponse> getSubscriberSourceDescriptionAsync(ContactLabAPIClient.ClabService.getSubscriberSourceDescriptionRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cancelCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReportResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(requestCampaignFeedbackReport))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedbackResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignFeedback))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getTrackedLinks))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignNameResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByCampaignName))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(invalidateToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWebResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(publishOnWeb))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNoteResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNote))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessageByCampaignId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findTriggerableCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCAl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsBySubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignNameResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoByCampaignName))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSelectionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createSelection))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessage))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberDataExchangeStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSdataCAl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSelectionRealFilterIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSelectionRealFilterId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCAResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinner))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchangeResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSubscriberDataExchange))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelopeResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(unmarshalPushTemplateEnvelope))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSelectionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(startSelection))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriber))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(borrowToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findArchivedFiltersBySubscriberSource))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelByIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMessageModelById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesByChannel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findMessagesInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCid))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribersResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addSubscribers))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(cloneAndSendCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByIdResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaigns))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatusResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getRequestStatus))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubjectResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsByNameOrSubject))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetweenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findCampaignsSentBetween))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaignResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendCampaign))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplateResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEmptyPushTemplate))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(commitSelectionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(commitSelection))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(scheduleCampaignFeedbackReportResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(scheduleCampaignFeedbackReport))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveriesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getXMLDeliveries))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getArchivedSubscriberSourceFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriptionsByResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscriptionsBy))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAvailableCommunicationCategories))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAliasResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(triggerDeliveryByAlias))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveTokenResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(keepaliveToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilterResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -17795,10 +18340,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -17866,6 +18411,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -18030,10 +18577,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -18101,6 +18648,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -18265,10 +18814,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -18336,6 +18885,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -18500,10 +19051,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -18571,6 +19122,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -18735,10 +19288,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -18806,6 +19359,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -18970,10 +19525,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -19041,6 +19596,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -19204,10 +19761,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -19275,6 +19832,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -19439,10 +19998,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -19510,6 +20069,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -19674,10 +20235,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -19745,6 +20306,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -19909,10 +20472,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -19980,6 +20543,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -20144,10 +20709,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -20215,6 +20780,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -20379,10 +20946,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -20450,6 +21017,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -20614,10 +21183,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -20685,6 +21254,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -20849,10 +21420,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -20920,6 +21491,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -21084,10 +21657,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -21155,6 +21728,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -21319,10 +21894,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -21390,6 +21965,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -21554,10 +22131,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -21625,6 +22202,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -21789,10 +22368,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -21860,6 +22439,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -22024,10 +22605,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -22095,6 +22676,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -22259,10 +22842,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -22330,6 +22913,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -22494,10 +23079,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -22565,6 +23150,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -22729,10 +23316,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -22800,6 +23387,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -22964,10 +23553,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -23035,6 +23624,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -23199,10 +23790,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -23270,6 +23861,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -23434,10 +24027,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -23505,6 +24098,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -23669,10 +24264,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -23740,6 +24335,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -23904,10 +24501,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -23975,6 +24572,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -24139,10 +24738,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -24210,6 +24809,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -24374,10 +24975,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -24445,6 +25046,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -24609,10 +25212,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -24680,6 +25283,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -24844,10 +25449,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -24915,6 +25520,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -25079,10 +25686,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -25150,6 +25757,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -25314,10 +25923,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -25385,6 +25994,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -25549,10 +26160,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -25620,6 +26231,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -25784,10 +26397,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -25855,6 +26468,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -26019,10 +26634,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -26090,6 +26705,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -26254,10 +26871,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -26325,6 +26942,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -26489,10 +27108,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -26560,6 +27179,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -26724,10 +27345,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -26795,6 +27416,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -26958,10 +27581,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -27029,6 +27652,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -27193,10 +27818,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -27264,6 +27889,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -27428,10 +28055,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -27499,6 +28126,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -27663,10 +28292,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -27734,6 +28363,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -27898,10 +28529,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -27969,6 +28600,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -28133,10 +28766,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -28204,6 +28837,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -28368,10 +29003,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -28439,6 +29074,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -28602,10 +29239,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -28673,6 +29310,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -28837,10 +29476,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -28908,6 +29547,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -29072,10 +29713,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -29143,6 +29784,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -29307,10 +29950,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -29378,6 +30021,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -29542,10 +30187,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -29613,6 +30258,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -29777,10 +30424,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -29848,6 +30495,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -30012,10 +30661,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -30083,6 +30732,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -30247,10 +30898,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -30318,6 +30969,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -30482,10 +31135,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -30553,6 +31206,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -30717,10 +31372,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -30788,6 +31443,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -30952,10 +31609,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -31023,6 +31680,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -31187,10 +31846,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -31258,6 +31917,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -31422,10 +32083,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -31493,6 +32154,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -31657,10 +32320,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -31728,6 +32391,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -31891,10 +32556,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -31962,6 +32627,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -32126,10 +32793,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -32197,6 +32864,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -32361,10 +33030,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -32432,6 +33101,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -32596,10 +33267,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -32667,6 +33338,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -32831,10 +33504,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -32902,6 +33575,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -33066,10 +33741,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -33137,6 +33812,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -33301,10 +33978,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -33372,6 +34049,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -33536,10 +34215,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -33607,6 +34286,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -33771,10 +34452,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -33842,6 +34523,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -34006,10 +34689,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -34077,6 +34760,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -34241,10 +34926,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -34312,6 +34997,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -34476,10 +35163,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -34547,6 +35234,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -34711,10 +35400,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -34782,6 +35471,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -34946,10 +35637,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -35017,6 +35708,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -35181,10 +35874,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -35252,6 +35945,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -35416,10 +36111,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -35487,6 +36182,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -35651,10 +36348,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -35722,6 +36419,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -35886,10 +36585,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -35957,6 +36656,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -36121,10 +36822,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -36192,6 +36893,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -36356,10 +37059,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -36427,6 +37130,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -36591,10 +37296,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -36662,6 +37367,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -36826,10 +37533,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -36897,6 +37604,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -37061,10 +37770,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -37132,6 +37841,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -37296,10 +38007,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -37367,6 +38078,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -37531,10 +38244,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -37602,6 +38315,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -37766,10 +38481,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -37837,6 +38552,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -38001,10 +38718,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -38072,6 +38789,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -38235,10 +38954,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -38306,6 +39025,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -38469,10 +39190,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -38540,6 +39261,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -38704,10 +39427,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -38775,6 +39498,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -38939,10 +39664,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -39010,6 +39735,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -39173,10 +39900,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -39244,6 +39971,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -39408,10 +40137,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -39479,6 +40208,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -39643,10 +40374,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -39714,6 +40445,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -39878,10 +40611,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -39949,6 +40682,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -40113,10 +40848,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -40184,6 +40919,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -40348,10 +41085,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -40419,6 +41156,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -40583,10 +41322,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -40654,6 +41393,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -40818,10 +41559,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -40889,6 +41630,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -41053,10 +41796,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -41124,6 +41867,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -41288,10 +42033,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -41359,6 +42104,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -41523,10 +42270,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -41594,6 +42341,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -41758,10 +42507,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -41829,6 +42578,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -41993,10 +42744,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -42064,6 +42815,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -42228,10 +42981,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -42299,6 +43052,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -42463,10 +43218,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -42534,6 +43289,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -42698,10 +43455,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -42769,6 +43526,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -42933,10 +43692,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -43004,6 +43763,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -43168,10 +43929,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -43239,6 +44000,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -43403,10 +44166,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -43474,6 +44237,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -43638,10 +44403,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -43709,6 +44474,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -43873,10 +44640,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -43944,6 +44711,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -44108,10 +44877,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -44179,6 +44948,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -44343,10 +45114,10 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateMessageSidCidCA))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilterResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersIncludedInFilter))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrencyResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setCampaignRecurrency))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSourceResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findFiltersBySubscriberSource))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendImmediateByCampaignIdToSubscriberId))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sendSplitTestWinnerResponse))]
@@ -44414,6 +45185,8 @@ namespace ContactLabAPIClient.ClabService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findSubscribersIncludedInFilter))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModelResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(createMessageModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescriptionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSubscriberSourceDescription))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersByResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(countSubscribersBy))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reuseSubscriberSourceFilterResponse))]
@@ -44523,6 +45296,53 @@ namespace ContactLabAPIClient.ClabService
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.getPageBuilderPageContentResponse> getPageBuilderPageContentAsync(ContactLabAPIClient.ClabService.getPageBuilderPageContentRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getSubscriberSourceDescription", WrapperNamespace="http://ws.api.contactlab.com/", IsWrapped=true)]
+    public partial class getSubscriberSourceDescriptionRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.api.contactlab.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public AuthToken token;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.api.contactlab.com/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int sourceIdentifier;
+        
+        public getSubscriberSourceDescriptionRequest()
+        {
+        }
+        
+        public getSubscriberSourceDescriptionRequest(AuthToken token, int sourceIdentifier)
+        {
+            this.token = token;
+            this.sourceIdentifier = sourceIdentifier;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getSubscriberSourceDescriptionResponse", WrapperNamespace="http://ws.api.contactlab.com/", IsWrapped=true)]
+    public partial class getSubscriberSourceDescriptionResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.api.contactlab.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SubscriberSourceDescription @return;
+        
+        public getSubscriberSourceDescriptionResponse()
+        {
+        }
+        
+        public getSubscriberSourceDescriptionResponse(SubscriberSourceDescription @return)
+        {
+            this.@return = @return;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -50597,6 +51417,35 @@ namespace ContactLabAPIClient.ClabService
         public ClabServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress)
         {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ContactLabAPIClient.ClabService.getSubscriberSourceDescriptionResponse ContactLabAPIClient.ClabService.ClabService.getSubscriberSourceDescription(ContactLabAPIClient.ClabService.getSubscriberSourceDescriptionRequest request)
+        {
+            return base.Channel.getSubscriberSourceDescription(request);
+        }
+        
+        public SubscriberSourceDescription getSubscriberSourceDescription(AuthToken token, int sourceIdentifier)
+        {
+            ContactLabAPIClient.ClabService.getSubscriberSourceDescriptionRequest inValue = new ContactLabAPIClient.ClabService.getSubscriberSourceDescriptionRequest();
+            inValue.token = token;
+            inValue.sourceIdentifier = sourceIdentifier;
+            ContactLabAPIClient.ClabService.getSubscriberSourceDescriptionResponse retVal = ((ContactLabAPIClient.ClabService.ClabService)(this)).getSubscriberSourceDescription(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.getSubscriberSourceDescriptionResponse> ContactLabAPIClient.ClabService.ClabService.getSubscriberSourceDescriptionAsync(ContactLabAPIClient.ClabService.getSubscriberSourceDescriptionRequest request)
+        {
+            return base.Channel.getSubscriberSourceDescriptionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ContactLabAPIClient.ClabService.getSubscriberSourceDescriptionResponse> getSubscriberSourceDescriptionAsync(AuthToken token, int sourceIdentifier)
+        {
+            ContactLabAPIClient.ClabService.getSubscriberSourceDescriptionRequest inValue = new ContactLabAPIClient.ClabService.getSubscriberSourceDescriptionRequest();
+            inValue.token = token;
+            inValue.sourceIdentifier = sourceIdentifier;
+            return ((ContactLabAPIClient.ClabService.ClabService)(this)).getSubscriberSourceDescriptionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
