@@ -5260,7 +5260,6 @@ public partial class SubscriberSource
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
-    [System.ComponentModel.DefaultValueAttribute(charset.UTF_8)]
     public charset charset
     {
         get
