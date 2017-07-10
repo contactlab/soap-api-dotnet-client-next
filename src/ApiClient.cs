@@ -5644,6 +5644,36 @@ public enum LookupMatchingMode
     
     /// <remarks/>
     LIKE,
+    
+    /// <remarks/>
+    IS_NULL,
+    
+    /// <remarks/>
+    IS_NOT_NULL,
+    
+    /// <remarks/>
+    GREATER,
+    
+    /// <remarks/>
+    GREATER_EQUALS,
+    
+    /// <remarks/>
+    LESS,
+    
+    /// <remarks/>
+    LESS_EQUALS,
+    
+    /// <remarks/>
+    NOT_LIKE,
+    
+    /// <remarks/>
+    IN,
+    
+    /// <remarks/>
+    NOT_IN,
+    
+    /// <remarks/>
+    DIFFERENT,
 }
 
 /// <remarks/>
@@ -11852,6 +11882,8 @@ public partial class SubscriberAttributeFilter
     
     private LookupMatchingMode lookupMatchingModeField;
     
+    private object[] attributeValuesField;
+    
     public SubscriberAttributeFilter()
     {
         this.lookupMatchingModeField = LookupMatchingMode.EQUALS;
@@ -11896,6 +11928,21 @@ public partial class SubscriberAttributeFilter
         set
         {
             this.lookupMatchingModeField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+    [System.Xml.Serialization.XmlArrayItemAttribute("attributeValues", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+    public object[] attributeValues
+    {
+        get
+        {
+            return this.attributeValuesField;
+        }
+        set
+        {
+            this.attributeValuesField = value;
         }
     }
 }
